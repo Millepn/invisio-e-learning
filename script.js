@@ -34,7 +34,7 @@ function reader() {
           </p>
         </div>
 
-        ./nato-module-original.pdf
+        ./nato-module-original.pdf.pdf
           Open PDF in new tab
         </a>
       </div>
@@ -48,7 +48,7 @@ function reader() {
             button below.
           </p>
 
-          ./nato-module-original.pdf
+          ./nato-module-original.pdf.pdf
             Open NATO course PDF
           </a>
         </div>
