@@ -40,18 +40,7 @@ function reader() {
       </div>
 
       <div class="pdf-viewer-container">
-        ./nato-module-original.pdf#page=1</iframe>
-
-        <div class="pdf-fallback">
-          <p>
-            If the document is not displayed, open the PDF using the
-            button below.
-          </p>
-
-          ./nato-module-original.pdf.pdf
-            Open NATO course PDF
-          </a>
-        </div>
+        ./nato-module-original.pdf.pdf#page=1&zoom=page-width</iframe>
       </div>
 
       <div class="reader-navigation">
