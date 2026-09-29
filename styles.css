@@ -10,6 +10,7 @@
   height:220px;
   object-fit:contain;
   display:block;
+  border-radius:50%;
 }
 
 .section{max-width:1180px;margin:auto;padding:54px 24px}.section h2{text-align:center;margin:0 0 10px}.lead{text-align:center;color:var(--muted);margin:0 auto 34px;max-width:720px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.card{background:#fff;border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 5px 18px rgba(15,45,75,.06)}.card-body{padding:22px}.course-image{height:120px;background:linear-gradient(135deg,#dbeeff,#f7fbff);display:grid;place-items:center;font-size:54px}.card h3{margin:0 0 8px}.card p{font-size:14px;line-height:1.55;color:var(--muted)}.meta{display:flex;justify-content:space-between;padding:14px 22px;border-top:1px solid var(--line);font-size:13px}.card .btn{width:100%;border-radius:0}.feature-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{background:#fff;padding:26px;border:1px solid var(--line);text-align:center}.feature-icon{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;margin:auto;background:var(--sky);color:var(--blue);font-weight:800}
