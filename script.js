@@ -25,28 +25,30 @@ function reader() {
       <div class="pdf-reader-header">
         <div>
           <div class="eyebrow">Course material</div>
+
           <h1>Introduction to NATO</h1>
+
           <p>
             Read the course material below. You can scroll through the
-            document, zoom in and open it in a separate browser tab.
+            document, zoom in, or open it in a separate browser tab.
           </p>
         </div>
 
-        <a
-          class        Open PDF in new tab
+        ./nato-module-original.pdf
+          Open PDF in new tab
         </a>
       </div>
 
       <div class="pdf-viewer-container">
-        <iframe
-          class="pdf-viewer"
-          src="nato-module-original.pdf#pagelass="pdf-fallback">
+        ./nato-module-original.pdf#page=1</iframe>
+
+        <div class="pdf-fallback">
           <p>
             If the document is not displayed, open the PDF using the
             button below.
           </p>
 
-          nato-module-original.pdf
+          ./nato-module-original.pdf
             Open NATO course PDF
           </a>
         </div>
@@ -72,7 +74,7 @@ function reader() {
     ${footer()}
   `;
 }
-``
+
 const questions=[{q:'In what year was NATO founded?',opts:['1945','1947','1949','1951'],correct:'1949',explain:'NATO was founded on 4 April 1949.'},{q:'How many sovereign nations are part of NATO?',opts:['31','32','33','34'],correct:'32',explain:'The correct answer in this prototype is 32.'}];
 function choose(q,a){state.answers[q]=a;render()}
 function submitQuiz(){state.score=questions.filter((q,i)=>state.answers[i]===q.correct).length;go('complete');setTimeout(confetti,100)}
