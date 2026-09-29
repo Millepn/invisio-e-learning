@@ -20,7 +20,7 @@ function overview(){
   let mods=[
     {
       title:'NATO at a glance: A brief history',
-      image:'/NATO-at-a-glance.png'
+      image:'/nato.png'
     },
     {
       title:'The North Atlantic Treaty',
