@@ -2,7 +2,7 @@
 const app=document.querySelector('#app');
 let state={screen:'login',answers:{},score:0};
 const courses=[
- {title:'Military organization & structure',icon:image:'/military'.jpg',pages:12,quizzes:1,items:['How the Danish defence is organized','Introduction to the three services','Introduction to military ranks']},
+ {title:'Military organization & structure',icon:image:'/military.png',pages:12,quizzes:1,items:['How the Danish defence is organized','Introduction to the three services','Introduction to military ranks']},
  {title:'Introduction to NATO',icon:'✥',pages:8,quizzes:2,items:['A brief history of NATO','The North Atlantic Treaty','NATO structure explained']},
  {title:'How operational environments impact performance',icon:'◌',pages:9,quizzes:1,items:['Urban environment','Arctic/cold-weather environment','Desert/hot and dry environment']},
  {title:'Military first aid',icon:'✚',pages:13,quizzes:1,items:['Essential IFAK contents','Stress factors','TCCC guidelines']},
