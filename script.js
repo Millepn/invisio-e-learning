@@ -43,50 +43,8 @@ function overview(){
       image:'military-structure.png'
     }
   ];
-
+ 
   return `${header()}
-  <section class="hero">
-    <div class="hero-copy">
-      <div class="eyebrow">Course overview</div>
-      <h1>Introduction to NATO</h1>
-      <p>
-        Gain a deeper understanding of NATO, its purpose, and its organizational structure.
-        Understanding how NATO operates is relevant because many customers work within NATO frameworks.
-      </p>
-      <button class="btn btn-light" onclick="go('reader')">
-        Start course
-      </button>
-    </div>
-
-    <div class="hero-mark">
-      <img src="nato.png" alt="NATO">
-    </div>
-  </section>
-
-  <section class="section">
-    <h2>Overview of the course</h2>
-    <p class="lead">Introduction to NATO</p>
-
-    <div class="modules">
-      ${mods.map((m,i)=>`
-        <article class="module">
-          <b>${i+1}</b>
-          <h3>${m.title}</h3>
-
-          <div class="thumb">
-            <img src="${m.image}" alt="${m.title}">
-          </div>
-        </article>
-      `).join('')}
-    </div>
-  </section>
-
-  ${footer()}`;
-}
-                    
-                    return `${header()}<section class="hero"><div class="hero-copy"><div class="eyebrow">Course overview</div><h1>Introduction to NATO</h1><p>Gain a deeper understanding of NATO, its purpose, and its organizational structure. Understanding how NATO operates is relevant because many customers work within NATO frameworks.</p><button class="btn btn-light" onclick="go('reader')">Start course</button></div><div class="hero-mark"><img src='nato.png'alt="NATO"></div></section><section class="section"><h2>Overview of the course</h2><p class="lead">Introduction to NATO</p><div class="modules">${mods.map((m,i)=>`<article class="module"><b>${i+1}</b><h3>${m}</h3><div class="thumb">NATO<br>A Brief Introduction</div></article>`).join('')}</div></section>${footer()}`}function reader() {
-  return `
-    ${header()}
 
     <section class="section course-reader-section">
       <div class="pdf-reader-header">
