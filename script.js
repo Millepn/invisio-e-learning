@@ -3,7 +3,7 @@ const app=document.querySelector('#app');
 let state={screen:'login',answers:{},score:0};
 const courses=[
  {title:'Military organization & structure',image:'/military.png',pages:12,quizzes:1,items:['How the Danish defence is organized','Introduction to the three services','Introduction to military ranks', 'How the army is organized']},
- {title:'Introduction to NATO',image:'/nato.png',pages:8,quizzes:2,items:['A brief history of NATO','The North Atlantic Treaty','NATO structure explained', 'NATO military structure', 'NATO's decision making']},
+ {title:'Introduction to NATO',image:'/nato.png',pages:8,quizzes:2,items:['A brief history of NATO','The North Atlantic Treaty','NATO structure explained', 'NATO military structure', 'NATOs decision making']},
  {title:'How operational environments impact performance',image:'/environments.png',pages:9,quizzes:1,items:['What is an operational environment?','Urban environment','Mountain environment', 'Arctic/cold-weather environment','Jungle/tropical environment','Desert/hot and dry environment', 'Open/temperate environment']},
  {title:'Military first aid',image:'/firstaid.png',pages:13,quizzes:1,items:['Core principles', 'Essential IFAK contents','Tactical Combat Casualty Care (TCCC) guidelines']},
  {title:'INVISIO products',image:'/products.png',pages:10,quizzes:3,items:['Headsets','Control units','Intercom-system', 'Tactical hubs', 'Accessories']},
