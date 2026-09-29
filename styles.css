@@ -90,3 +90,258 @@
     width: 100%;
   }
 }
+/* =========================================================
+   COURSE OVERVIEW - DESIGN SOM SCREENSHOT 1
+   ========================================================= */
+
+/* Selve kursussektionen */
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px 70px;
+}
+
+/* Overskrift */
+.section > h2 {
+  color: #173b75;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+/* Undertekst */
+.section > .lead {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 26px;
+  text-align: center;
+}
+
+
+/* =========================================================
+   COURSE GRID
+   ========================================================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+
+/* =========================================================
+   COURSE CARD
+   ========================================================= */
+
+.grid .card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  background: #fff;
+  border: none;
+  border-radius: 6px;
+
+  min-height: 475px;
+
+  overflow: hidden;
+
+  box-shadow: none;
+}
+
+
+/* =========================================================
+   RUNDT BILLEDE ØVERST TIL HØJRE
+   ========================================================= */
+
+.grid .course-image {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+
+  width: 66px;
+  height: 66px;
+
+  border-radius: 50%;
+
+  background: #dceaff;
+  border: 6px solid #dceaff;
+
+  overflow: hidden;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 30px;
+}
+
+
+/* Hvis course-image indeholder et <img> */
+.grid .course-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+   ========================================================= */
+
+.grid .card-body {
+  padding: 40px 18px 18px;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Kursustitel */
+
+.grid .card h3 {
+  color: #173b75;
+
+  font-size: 18px;
+  line-height: 1.2;
+
+  margin: 0;
+
+  padding-right: 70px;
+
+  min-height: 44px;
+}
+
+
+/* Beskrivelse */
+
+.grid .card p {
+  color: #555;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+
+/* =========================================================
+   COURSE FEATURES
+   ========================================================= */
+
+.grid .card-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 0;
+}
+
+.grid .card-body li {
+  position: relative;
+
+  padding-left: 20px;
+  margin-bottom: 10px;
+
+  color: #555;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.grid .card-body li::before {
+  content: "✓";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  color: #69a2ff;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   META: "12 pages / 2 quizzes"
+   ========================================================= */
+
+.grid .meta {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: auto;
+
+  padding: 14px 18px;
+
+  border-top: 1px solid #ddd;
+
+  color: #666;
+  font-size: 12px;
+
+  background: #fff;
+}
+
+
+/* =========================================================
+   COURSE BUTTON
+   ========================================================= */
+
+.grid .card > .btn,
+.grid .card-body > .btn {
+  width: calc(100% - 36px);
+  margin: 0 18px 18px;
+
+  border-radius: 3px;
+
+  padding: 11px 15px;
+
+  background: #173b75;
+  color: white;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  border: none;
+}
+
+
+/* Hover */
+.grid .card > .btn:hover,
+.grid .card-body > .btn:hover {
+  background: #12315f;
+  filter: none;
+}
+
+
+/* =========================================================
+   FILTER + SEARCH
+   ========================================================= */
+
+.filter,
+.search,
+.course-filter,
+.course-search {
+  border-radius: 4px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 35px 18px 50px;
+  }
+
+  .section > h2 {
+    font-size: 25px;
+  }
+}
