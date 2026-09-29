@@ -34,13 +34,17 @@ function reader() {
           </p>
         </div>
 
-        .../nato-module-original.pdf.pdf
-          Open PDF in new tab
-        </a>
+        <a href="/nato-module-original.pdf" target="_blank">
+  Open PDF in new tab
+</a>
       </div>
 
       <div class="pdf-viewer-container">
-        .../nato-module-original.pdf.pdf#page=1&zoom=page-width</iframe>
+        <iframe
+  src="/nato-module-original.pdf#page=1&zoom=page-width"
+  width="100%"
+  height="700"
+></iframe>
       </div>
 
       <div class="reader-navigation">
