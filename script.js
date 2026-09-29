@@ -20,77 +20,102 @@ function overview(){
   let mods=[
     {
       title:'NATO at a glance: A brief history',
-      image:'NATO-at-a-glance.png'
+      image:'/NATO-at-a-glance.png'
     },
     {
       title:'The North Atlantic Treaty',
-      image:'The-north-atlantic-treaty.png'
+      image:'/The-north-atlantic-treaty.png'
     },
     {
       title:'How NATO is organised',
-      image:'How-nato-is-organised.png'
+      image:'/How-nato-is-organised.png'
     },
     {
       title:'How NATO is organised',
-      image:'How-nato-is-organised.png'
+      image:'/How-nato-is-organised.png'
     },
     {
       title:'How NATO is organised',
-     image:'How-nato-is-organised.png'
+      image:'/How-nato-is-organised.png'
     },
     {
       title:'NATO military structure',
-      image:'military-structure.png'
+      image:'/military-structure.png'
     }
   ];
- 
+
   return `${header()}
 
-    <section class="section course-reader-section">
-      <div class="pdf-reader-header">
-        <div>
-          <div class="eyebrow">Course material</div>
+  <section class="hero">
 
-          <h1>Introduction to NATO</h1>
+    <div class="hero-copy">
 
-          <p>
-            Read the course material below. You can scroll through the
-            document, zoom in, or open it in a separate browser tab.
-          </p>
-        </div>
-
-        <a href="/nato-module-original.pdf.pdf" target="_blank">
-  Open PDF in new tab
-</a>
+      <div class="eyebrow">
+        Course overview
       </div>
 
-      <div class="pdf-viewer-container">
-        <iframe
-  src="/nato-module-original.pdf.pdf#page=1&zoom=page-width"
-  width="100%"
-  height="700"
-></iframe>
-      </div>
+      <h1>
+        Introduction to NATO
+      </h1>
 
-      <div class="reader-navigation">
-        <button
-          class="btn btn-light"
-          onclick="go('overview')"
-        >
-          Back to course overview
-        </button>
+      <p>
+        Gain a deeper understanding of NATO, its purpose, and its organizational structure.
+        Understanding how NATO operates is relevant because many customers work within NATO frameworks.
+      </p>
 
-        <button
-          class="btn btn-primary"
-          onclick="go('quiz')"
-        >
-          Continue to quiz
-        </button>
-      </div>
-    </section>
+      <button class="btn btn-light" onclick="go('reader')">
+        Start course
+      </button>
 
-    ${footer()}
-  `;
+    </div>
+
+    <div class="hero-mark">
+      <img src="/nato.png" alt="NATO">
+    </div>
+
+  </section>
+
+
+  <section class="section">
+
+    <h2>
+      Overview of the course
+    </h2>
+
+    <p class="lead">
+      Introduction to NATO
+    </p>
+
+    <div class="modules">
+
+      ${mods.map((m,i)=>`
+
+        <article class="module">
+
+          <b>${i+1}</b>
+
+          <h3>
+            ${m.title}
+          </h3>
+
+          <div class="thumb">
+
+            <img
+              src="${m.image}"
+              alt="${m.title}"
+            >
+
+          </div>
+
+        </article>
+
+      `).join('')}
+
+    </div>
+
+  </section>
+
+  ${footer()}`;
 }
 
 const questions=[{q:'In what year was NATO founded?',opts:['1945','1947','1949','1951'],correct:'1949',explain:'NATO was founded on 4 April 1949.'},{q:'How many sovereign nations are part of NATO?',opts:['31','32','33','34'],correct:'32',explain:'The correct answer in this prototype is 32.'}];
