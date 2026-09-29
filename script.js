@@ -4,10 +4,10 @@ let state={screen:'login',answers:{},score:0};
 const courses=[
  {title:'Military organization & structure',image:'/military.png',pages:12,quizzes:1,items:['How the Danish defence is organized','Introduction to the three services','Introduction to military ranks']},
  {title:'Introduction to NATO',image:'/nato.png',pages:8,quizzes:2,items:['A brief history of NATO','The North Atlantic Treaty','NATO structure explained']},
- {title:'How operational environments impact performance',image:'/environment.png',pages:9,quizzes:1,items:['Urban environment','Arctic/cold-weather environment','Desert/hot and dry environment']},
+ {title:'How operational environments impact performance',image:'/environments.png',pages:9,quizzes:1,items:['Urban environment','Arctic/cold-weather environment','Desert/hot and dry environment']},
  {title:'Military first aid',image:'/firstaid.png',pages:13,quizzes:1,items:['Essential IFAK contents','Stress factors','TCCC guidelines']},
  {title:'INVISIO products',image:'/products.png',pages:10,quizzes:3,items:['Headsets','Control units','Intercom systems']},
- {title:'User roles/functions/teams',image:'/nato.png',pages:5,quizzes:1,items:['Responsibilities','Pain points','Daily routines']}
+ {title:'User roles/functions/teams',image:'/userroles.png',pages:5,quizzes:1,items:['Responsibilities','Pain points','Daily routines']}
 ];
 function go(screen){state.screen=screen;window.scrollTo(0,0);render();}
 function header(){return `<header class="topbar"><div class="brand">INVISIO</div><nav class="nav"><button onclick="go('home')">Home</button><button>My page</button><button onclick="go('courses')">Courses</button><button>Support</button></nav><div class="top-actions"><button class="btn btn-light">Profile</button><button class="btn btn-light" onclick="go('login')">Log out</button></div></header>`}
