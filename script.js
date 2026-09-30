@@ -356,7 +356,6 @@ function home() {
 /* =========================================================
    COURSE CARD
    ========================================================= */
-
 function courseCard(c, i) {
 
   return `
@@ -380,8 +379,8 @@ function courseCard(c, i) {
         </h3>
 
         <ul>
-  ${c.items.map(x => `<li>${x}</li>`).join('')}
-</ul>
+          ${c.items.map(x => `<li>${x}</li>`).join('')}
+        </ul>
 
       </div>
 
@@ -400,24 +399,21 @@ function courseCard(c, i) {
       </div>
 
 
-<button
-class="btn ${c.available ? 'btn-open-course' : 'btn-light'}"
-``
-  onclick="${
-  c.available
-    ? "go('overview')"
-    : "alert('This course is not included in the prototype yet.')"
-}">
+      <button
+        class="btn ${c.available ? 'btn-open-course' : 'btn-light'}"
+        onclick="${
+          c.available
+            ? "go('overview')"
+            : "alert('This course is not included in the prototype yet.')"
+        }">
 
-  ${c.available ? 'Open course' : 'Coming soon'}
+        ${c.available ? 'Open course' : 'Coming soon'}
 
-
-</button>
+      </button>
 
     </article>
   `;
 }
-
 
 /* =========================================================
    COURSES PAGE
