@@ -691,7 +691,8 @@ const questions = [
       '1951'
     ],
     correct: '1949',
-    explain: 'NATO was founded on 4 April 1949.'
+    explain: 'NATO was founded on April 4th 1949.',
+    image: '/nato.png'
   },
 
   {
@@ -703,7 +704,8 @@ const questions = [
       '34'
     ],
     correct: '32',
-    explain: 'The correct answer in this prototype is 32.'
+    explain: 'NATO was founded as an alliance of 12 countries. Since then, the alliance has expanded considerably, with many nations joining over the years, while several others continue to express an interest in membership.',
+    image: '/nato.png'
   }
 
 ];
