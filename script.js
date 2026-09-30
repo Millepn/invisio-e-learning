@@ -816,31 +816,38 @@ function quiz() {
 
 
           ${
-            state.answers[i]
-              ? `
-                <div class="feedback">
+  state.answers[i]
+    ? state.answers[i] === q.correct
+      ? `
+        <div class="feedback-rich">
 
-                  <b>
-                    ${
-                      state.answers[i] === q.correct
-                        ? 'Correct!'
-                        : 'Try again'
-                    }
-                  </b>
+          <img
+            src="${q.image}"
+      ck-text">
 
-                  <br>
+            <h4>✅ Correct!</h4>
 
-                  ${
-                    state.answers[i] === q.correct
-                      ? q.explain
-                      : 'Review the course and select another answer.'
-                  }
+            <p>
+              ${q.explain}
+            </p>
 
-                </div>
-              `
-              : ''
-          }
+          </div>
 
+        </div>
+      `
+      : `
+        <div class="feedback">
+
+          <b>❌ Try again</b>
+
+          <br>
+
+          Review the course and select another answer.
+
+        </div>
+      `
+    : ''
+}
         </article>
 
       `).join('')}
