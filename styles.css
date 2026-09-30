@@ -410,3 +410,25 @@
   margin: 0;
   line-height: 1.6;
 }
+
+.btn-open-course {
+  width: calc(100% - 36px);
+  margin: 0 18px 18px;
+
+  background: #69a2ff;
+  color: white;
+
+  border: none;
+  border-radius: 3px;
+
+  padding: 11px 15px;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.btn-open-course:hover {
+  background: #4c8df5;
+}
