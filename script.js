@@ -25,6 +25,7 @@ const courses = [
     image: '/nato.png',
     pages: 8,
     quizzes: 2,
+    available: true, 
     items: [
       'A brief history of NATO',
       'The North Atlantic Treaty',
@@ -400,18 +401,15 @@ function courseCard(c, i) {
 
 
 <button
-  class="${
-    i === 1
-      ? 'btn-open-course'
-      : 'btn btn-light'
-  }"
+class="btn ${c.available ? 'btn-primary' : 'btn-light'}"
   onclick="${
-    i === 1
-      ? "go('overview')"
-      : "alert('This course is not included in the prototype yet.')"
-  }">
+  c.available
+    ? "go('overview')"
+    : "alert('This course is not included in the prototype yet.')"
+}">
 
-  ${i === 1 ? 'Open course' : 'Coming soon'}
+  ${c.available ? 'Open course' : 'Coming soon'}
+
 
 </button>
 
