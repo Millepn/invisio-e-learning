@@ -401,7 +401,8 @@ function courseCard(c, i) {
 
 
 <button
-class="btn ${c.available ? 'btn-primary' : 'btn-light'}"
+class="btn ${c.available ? 'btn-open-course' : 'btn-light'}"
+``
   onclick="${
   c.available
     ? "go('overview')"
