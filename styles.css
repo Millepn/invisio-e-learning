@@ -374,3 +374,39 @@
   object-fit: contain;
   display: block;
 }
+
+.feedback-rich {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+
+  margin-top: 16px;
+  padding: 20px;
+
+  background: #f4f7f5;
+  border-left: 5px solid #1f8b4c;
+}
+
+.feedback-rich img {
+  width: 260px;
+  height: 150px;
+
+  object-fit: cover;
+
+  border-radius: 6px;
+}
+
+.feedback-text {
+  flex: 1;
+}
+
+.feedback-text h4 {
+  margin: 0 0 8px;
+  color: #173b75;
+  font-size: 24px;
+}
+
+.feedback-text p {
+  margin: 0;
+  line-height: 1.6;
+}
