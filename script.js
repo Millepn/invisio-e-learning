@@ -259,9 +259,7 @@ function home() {
         </h1>
 
         <p>
-          Training designed to strengthen product knowledge,
-          customer understanding, and awareness of the operational
-          environments in which INVISIO solutions are used.
+          Develop an understanding of INVISIO's customers, their operational environments, and the demands of their daily work. Learn how different conditions affect user needs, and how product design decisions can enhance or limit performance, safety, and communication in the field.
         </p>
 
         <button
