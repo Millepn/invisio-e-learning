@@ -765,8 +765,7 @@ function quiz() {
         </h1>
 
         <p>
-          Complete the quiz to reinforce your learning
-          and assess your understanding.
+          To help reinforce your learning and assess your understanding of the course, we have prepared a short quiz for you.
         </p>
 
       </div>
