@@ -401,17 +401,21 @@ function courseCard(c, i) {
       </div>
 
 
-      <button
-        class="btn ${i === 1 ? 'btn-primary' : 'btn-light'}"
-        onclick="${
-          i === 1
-            ? "go('overview')"
-            : "alert('This course is not included in the prototype yet.')"
-        }">
+<button
+  class="${
+    i === 1
+      ? 'btn-open-course'
+      : 'btn btn-light'
+  }"
+  onclick="${
+    i === 1
+      ? "go('overview')"
+      : "alert('This course is not included in the prototype yet.')"
+  }">
 
-        ${i === 1 ? 'Open course' : 'Coming soon'}
+  ${i === 1 ? 'Open course' : 'Coming soon'}
 
-      </button>
+</button>
 
     </article>
   `;
