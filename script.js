@@ -691,8 +691,8 @@ const questions = [
       '1951'
     ],
     correct: '1949',
-    explain: 'NATO was founded on April 4th 1949.',
-    image: '/nato.png'
+    explain: 'On April 4th 1949, 12 countries sign the North Atlantic Treaty in Washington, D.C. NATO is founded on shared values including democracy, individual liberty and the rule of law.',
+    image: '/nato-hq.png'
   },
 
   {
