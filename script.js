@@ -705,7 +705,7 @@ const questions = [
     ],
     correct: '32',
     explain: 'NATO was founded as an alliance of 12 countries. Since then, the alliance has expanded considerably, with many nations joining over the years, while several others continue to express an interest in membership.',
-    image: '/nato.png'
+    image: '/nato-members.png'
   }
 
 ];
