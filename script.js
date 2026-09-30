@@ -380,9 +380,9 @@ function courseCard(c, i) {
           ${c.title}
         </h3>
 
-        <p>
-          ${c.items.map(x => '• ' + x).join('<br>')}
-        </p>
+        <ul>
+  ${c.items.map(x => `<li>${x}</li>`).join('')}
+</ul>
 
       </div>
 
