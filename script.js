@@ -772,9 +772,13 @@ function quiz() {
       </div>
 
 
-      <div class="hero-mark">
-        ✥
-      </div>
+     <div class="hero-mark">
+
+  <img
+    src="/nato.png"
+    alt="NATO">
+
+</div>
 
     </section>
 
