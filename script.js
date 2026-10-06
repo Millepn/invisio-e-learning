@@ -122,9 +122,9 @@ function header() {
           Home
         </button>
 
-        <button>
-          My page
-        </button>
+        <button onclick="go('mypage')">
+  My page
+</button>
 
         <button onclick="go('courses')">
           Courses
@@ -352,6 +352,241 @@ function home() {
   `;
 }
 
+/* =========================================================
+   MY PAGE
+   ========================================================= */
+
+function myPage() {
+
+  const profile = {
+    name: 'Demo User',
+    points: 5840,
+    completedCourses: 3,
+    totalCourses: courses.length
+  };
+
+
+  const badges = [
+
+    {
+      name: 'Flawless finisher',
+      icon: '🔥',
+      description: 'Complete a quiz without making any mistakes.',
+      unlocked: true
+    },
+
+    {
+      name: 'Social butterfly',
+      icon: '👋',
+      description: 'Take part in a collaborative learning activity.',
+      unlocked: true
+    },
+
+    {
+      name: 'Explorer',
+      icon: '💯',
+      description: 'Explore three different learning topics.',
+      unlocked: true
+    },
+
+    {
+      name: 'Streak freak',
+      icon: '⚡',
+      description: 'Complete learning activities several days in a row.',
+      unlocked: false
+    }
+
+  ];
+
+
+  return `
+    ${header()}
+
+    <main class="mypage">
+
+      <section class="mypage-intro">
+
+        <div class="eyebrow">
+          Personal learning dashboard
+        </div>
+
+        <h1>
+          My Page
+        </h1>
+
+        <h2>
+          Welcome to your personal dashboard!
+        </h2>
+
+        <p>
+          Here you can track your completed courses, view your badges,
+          and monitor your progress. You can also see how your colleagues
+          and other departments are performing. Keep learning, climb the
+          leaderboard, and earn more rewards for you and your team!
+        </p>
+
+      </section>
+
+
+      <section class="mypage-section">
+
+        <h2>
+          Points you've earned
+        </h2>
+
+        <div class="points-card">
+
+          <div class="points-number">
+            ${profile.points.toLocaleString()} XP
+          </div>
+
+          <p>
+            ...and counting! Keep taking more courses to increase your points.
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <section class="mypage-section">
+
+        <h2>
+          Badges you've earned
+        </h2>
+
+        <div class="badge-grid">
+
+          ${badges.map(badge => `
+
+            <article
+              class="badge-card ${badge.unlocked ? 'unlocked' : 'locked'}"
+              title="${badge.description}">
+
+              <div class="badge-icon">
+                ${badge.icon}
+              </div>
+
+              <h3>
+                ${badge.name}
+              </h3>
+
+              <p>
+                ${
+                  badge.unlocked
+                    ? 'Badge unlocked'
+                    : 'Keep learning to unlock this badge'
+                }
+              </p>
+
+              <span class="badge-status">
+                ${badge.unlocked ? '✓ Earned' : '🔒 Locked'}
+              </span>
+
+            </article>
+
+          `).join('')}
+
+        </div>
+
+      </section>
+
+
+      <section class="mypage-section">
+
+        <h2>
+          Weekly progress
+        </h2>
+
+        <div class="progress-layout">
+
+          <div class="progress-image-card">
+
+            /weekly-progress.png
+
+          </div>
+
+
+          <div class="progress-summary">
+
+            <div class="summary-item">
+
+              <span>
+                Completed courses
+              </span>
+
+              <strong>
+                ${profile.completedCourses}
+              </strong>
+
+            </div>
+
+
+            <div class="summary-item">
+
+              <span>
+                Available courses
+              </span>
+
+              <strong>
+                ${profile.totalCourses}
+              </strong>
+
+            </div>
+
+
+            <div class="summary-item">
+
+              <span>
+                Total points
+              </span>
+
+              <strong>
+                ${profile.points.toLocaleString()} XP
+              </strong>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <section class="mypage-section">
+
+        <div class="mypage-action">
+
+          <div>
+
+            <h2>
+              Continue learning
+            </h2>
+
+            <p>
+              Explore the available courses and earn more points and badges.
+            </p>
+
+          </div>
+
+          <button
+            class="btn btn-primary"
+            onclick="go('courses')">
+
+            View courses
+
+          </button>
+
+        </div>
+
+      </section>
+
+    </main>
+
+    ${footer()}
+  `;
+}
 
 /* =========================================================
    COURSE CARD
@@ -949,19 +1184,16 @@ function complete() {
 
 function render() {
 
-  const pages = {
-    login: login,
-    home: home,
-    courses: coursesPage,
-    overview: overview,
-    reader: reader,
-    quiz: quiz,
-    complete: complete
-  };
-
-  app.innerHTML = pages[state.screen]();
-
-}
+const pages = {
+  login: login,
+  home: home,
+  mypage: myPage,
+  courses: coursesPage,
+  overview: overview,
+  reader: reader,
+  quiz: quiz,
+  complete: complete
+};
 
 
 /* =========================================================
