@@ -502,9 +502,11 @@ function myPage() {
 
           <div class="progress-image-card">
 
-            /weekly-progress.png
+  <img
+    src="/weekly-progress.png"
+    alt="Weekly progress">
 
-          </div>
+</div>
 
 
           <div class="progress-summary">
