@@ -428,3 +428,291 @@
 
   cursor: pointer;
 }
+
+/* =========================================================
+   MY PAGE
+   ========================================================= */
+
+.mypage {
+  background: #f5f8fb;
+  color: var(--ink);
+  padding: 48px 24px 70px;
+}
+
+
+.mypage-intro {
+  max-width: 760px;
+  margin: 0 auto 54px;
+  text-align: center;
+}
+
+
+.mypage-intro h1 {
+  margin: 8px 0 10px;
+  color: #173b75;
+  font-size: 36px;
+}
+
+
+.mypage-intro h2 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+
+.mypage-intro p {
+  margin: 0;
+  color: #56616f;
+  line-height: 1.6;
+}
+
+
+.mypage-section {
+  max-width: 1100px;
+  margin: 0 auto 52px;
+}
+
+
+.mypage-section > h2 {
+  margin: 0 0 20px;
+  color: #173b75;
+  font-size: 22px;
+}
+
+
+/* Points */
+
+.points-card {
+  padding: 32px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  box-shadow: 0 5px 18px rgba(15, 45, 75, 0.06);
+}
+
+
+.points-number {
+  margin-bottom: 8px;
+  color: #173b75;
+  font-size: 44px;
+  font-weight: 800;
+}
+
+
+.points-card p {
+  margin: 0;
+  color: #56616f;
+}
+
+
+/* Badges */
+
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+
+.badge-card {
+  position: relative;
+  padding: 28px 18px 22px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+.badge-card.unlocked:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 22px rgba(15, 45, 75, 0.12);
+}
+
+
+.badge-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 82px;
+  height: 82px;
+  margin: 0 auto 16px;
+  background: #eaf3ff;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 5px 16px rgba(23, 59, 117, 0.14);
+  font-size: 42px;
+}
+
+
+.badge-card h3 {
+  margin: 0 0 8px;
+  color: #173b75;
+  font-size: 16px;
+}
+
+
+.badge-card p {
+  min-height: 34px;
+  margin: 0 0 15px;
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+
+.badge-status {
+  display: inline-block;
+  padding: 5px 10px;
+  color: #173b75;
+  background: #eaf3ff;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+.badge-card.locked {
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
+
+.badge-card.locked .badge-status {
+  color: #555;
+  background: #e5e7eb;
+}
+
+
+/* Weekly progress */
+
+.progress-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(230px, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+
+.progress-image-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 330px;
+  padding: 24px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+
+.progress-image-card img {
+  display: block;
+  width: 100%;
+  max-width: 620px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+.progress-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+
+.summary-item {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+}
+
+
+.summary-item span {
+  color: #56616f;
+  font-size: 13px;
+}
+
+
+.summary-item strong {
+  color: #173b75;
+  font-size: 20px;
+}
+
+
+/* Bottom action */
+
+.mypage-action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px 32px;
+  background: #eaf3ff;
+  border-radius: 10px;
+}
+
+
+.mypage-action h2 {
+  margin: 0 0 6px;
+  color: #173b75;
+}
+
+
+.mypage-action p {
+  margin: 0;
+  color: #56616f;
+}
+
+
+/* Responsive */
+
+@media (max-width: 850px) {
+
+  .badge-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .progress-layout {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .mypage {
+    padding: 36px 16px 50px;
+  }
+
+  .mypage-intro h1 {
+    font-size: 30px;
+  }
+
+  .badge-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mypage-action {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .mypage-action .btn {
+    width: 100%;
+  }
+
+}
