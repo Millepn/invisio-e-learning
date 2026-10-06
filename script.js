@@ -1183,18 +1183,21 @@ function complete() {
    ========================================================= */
 
 function render() {
+  const pages = {
+    login: login,
+    home: home,
+    mypage: myPage,
+    courses: coursesPage,
+    overview: overview,
+    reader: reader,
+    quiz: quiz,
+    complete: complete
+  };
 
-const pages = {
-  login: login,
-  home: home,
-  mypage: myPage,
-  courses: coursesPage,
-  overview: overview,
-  reader: reader,
-  quiz: quiz,
-  complete: complete
+  const currentPage = pages[state.screen] || login;
+
+  app.innerHTML = currentPage();
 };
-
 
 /* =========================================================
    CONFETTI
