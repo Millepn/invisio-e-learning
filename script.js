@@ -500,11 +500,77 @@ function myPage() {
 
         <div class="progress-layout">
 
-          <div class="progress-image-card">
+          <div class="progress-chart-card">
 
-  <img
-    src="/weekly-progress.png"
-    alt="Weekly progress">
+  <div class="chart-header">
+
+    <div>
+      <span class="chart-dot current"></span>
+      <strong>This week</strong>
+    </div>
+
+    <span>36 lessons</span>
+
+  </div>
+
+  <div class="chart-header chart-previous">
+
+    <div>
+      <span class="chart-dot previous"></span>
+      <strong>Last week</strong>
+    </div>
+
+    <span>24 lessons</span>
+
+  </div>
+
+
+  <div class="chart-area">
+
+    <div class="chart-y-axis">
+      <span>12</span>
+      <span>9</span>
+      <span>6</span>
+      <span>3</span>
+      <span>0</span>
+    </div>
+
+    <div class="chart-plot">
+
+      <div class="chart-grid-line line-1"></div>
+      <div class="chart-grid-line line-2"></div>
+      <div class="chart-grid-line line-3"></div>
+      <div class="chart-grid-line line-4"></div>
+      <div class="chart-grid-line line-5"></div>
+
+      <div class="chart-bar-group">
+        <div class="chart-bar" style="--height: 35%"></div>
+        <span>Mon</span>
+      </div>
+
+      <div class="chart-bar-group">
+        <div class="chart-bar" style="--height: 58%"></div>
+        <span>Tue</span>
+      </div>
+
+      <div class="chart-bar-group">
+        <div class="chart-bar" style="--height: 42%"></div>
+        <span>Wed</span>
+      </div>
+
+      <div class="chart-bar-group">
+        <div class="chart-bar" style="--height: 74%"></div>
+        <span>Thu</span>
+      </div>
+
+      <div class="chart-bar-group">
+        <div class="chart-bar" style="--height: 50%"></div>
+        <span>Fri</span>
+      </div>
+
+    </div>
+
+  </div>
 
 </div>
 
