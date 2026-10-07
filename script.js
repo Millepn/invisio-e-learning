@@ -1469,12 +1469,12 @@ const militaryQuestions = [
   {
     q: 'What does the Defence Staff provide?',
     opts: [
-      'Staretgic planning, operational coordination and administrative support',
+      'Strategic planning, operational coordination and administrative support',
       'The development and employment of Danmark's land forces',
       'Denmarks maritime capabilities and naval operations',
       'Essential support and enabling capabilities across the Defence'
     ],
-    correct: 'Staretgic planning, operational coordination and administrative support',
+    correct: 'Strategic planning, operational coordination and administrative support',
     explain: 'The Defence Staff plays a crucial role in the Danish Armed Forces by providing strategic coordination, capability development, and administrative oversight of military operations.',
     image: '/Defence-staff.png'
   },
@@ -1573,7 +1573,7 @@ function militaryQuiz() {
                     ? 'selected'
                     : ''
                 }"
-                onclick="chooseMilitary(${i}, '${a}')">
+                onclick='chooseMilitary(${i}, ${JSON.stringify(a)})'
 
                 ${a}
 
