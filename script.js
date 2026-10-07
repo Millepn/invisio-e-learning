@@ -911,7 +911,7 @@ function militaryOverview() {
 
   {
     title: 'The structure of the army',
-    image: '/structure of the army.png'
+    image: '/structure-of-the-army.png'
   }
 
 ];
