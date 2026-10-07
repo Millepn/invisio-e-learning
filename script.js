@@ -1110,14 +1110,13 @@ function reader() {
 /* =========================================================
    Military PDF READER
    ========================================================= */
+
 function militaryReader() {
 
   return `
     ${header()}
 
-
     <section class="section course-reader-section">
-
 
       <div class="pdf-reader-header">
 
@@ -1127,10 +1126,9 @@ function militaryReader() {
             Course material
           </div>
 
-         <h1>
-  Military organization & structure
-</h1>
-
+          <h1>
+            Military organization & structure
+          </h1>
 
           <p>
             Read the course material below. You can scroll
@@ -1139,7 +1137,6 @@ function militaryReader() {
           </p>
 
         </div>
-
 
         <a
           href="/introduction-to-military-reduced.pdf"
@@ -1152,48 +1149,70 @@ function militaryReader() {
       </div>
 
 
-      <div class="pdf-viewer-container">
-
-        <iframe
-          class="pdf-viewer"
-          src="/introduction-to-military-reduced.pdf#page=1&zoom=page-width"
-          title="Military organization & structure course material"
-        </iframe>
-
-      </div>
-
+      <!-- COURSE NAVIGATION -->
 
       <div class="reader-navigation">
-
 
         <button
           class="btn btn-light"
           onclick="go('militaryOverview')">
 
+          Back to course overview
+
+        </button>
+
+        <button
+          class="btn btn-primary"
+          onclick="go('militaryQuiz')">
+
+          Continue to quiz →
+
+        </button>
+
+      </div>
+
+
+      <!-- PDF -->
+
+      <div class="pdf-viewer-container">
+
+        <iframe
+          class="pdf-viewer"
+          src="/introduction-to-military-reduced.pdf#page=1&zoom=page-width"
+          title="Military organization & structure course material">
+        </iframe>
+
+      </div>
+
+
+      <!-- COURSE NAVIGATION AGAIN -->
+
+      <div class="reader-navigation">
+
+        <button
+          class="btn btn-light"
+          onclick="go('militaryOverview')">
 
           Back to course overview
 
         </button>
 
-
         <button
-  class="btn btn-primary"
-  onclick="go('militaryQuiz')">
+          class="btn btn-primary"
+          onclick="go('militaryQuiz')">
 
-  Continue to quiz
+          Continue to quiz →
 
-</button>
-
-
+        </button>
 
       </div>
 
     </section>
 
-
     ${footer()}
   `;
 }
+
 
 /* =========================================================
    NATO QUIZ
