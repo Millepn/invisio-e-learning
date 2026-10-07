@@ -1149,31 +1149,6 @@ function militaryReader() {
       </div>
 
 
-      <!-- COURSE NAVIGATION -->
-
-      <div class="reader-navigation">
-
-        <button
-          class="btn btn-light"
-          onclick="go('militaryOverview')">
-
-          Back to course overview
-
-        </button>
-
-        <button
-          class="btn btn-primary"
-          onclick="go('militaryQuiz')">
-
-          Continue to quiz →
-
-        </button>
-
-      </div>
-
-
-      <!-- PDF -->
-
       <div class="pdf-viewer-container">
 
         <iframe
@@ -1185,7 +1160,7 @@ function militaryReader() {
       </div>
 
 
-      <!-- COURSE NAVIGATION AGAIN -->
+      <!-- NAVIGATION UNDER PDF -->
 
       <div class="reader-navigation">
 
@@ -1197,17 +1172,19 @@ function militaryReader() {
 
         </button>
 
+
         <button
           class="btn btn-primary"
           onclick="go('militaryQuiz')">
 
-          Continue to quiz →
+          Continue to quiz
 
         </button>
 
       </div>
 
     </section>
+
 
     ${footer()}
   `;
