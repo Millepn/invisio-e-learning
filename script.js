@@ -1467,29 +1467,29 @@ function complete() {
 const militaryQuestions = [
 
   {
-    q: 'Which of the following is one of the three military services?',
+    q: 'What does the Defence Staff provide?',
     opts: [
-      'Army',
-      'Police',
-      'Fire service',
-      'Customs service'
+      'Staretgic planning, operational coordination and administrative support',
+      'The development and employment of Danmark's land forces',
+      'Denmarks maritime capabilities and naval operations,
+      'Essential support and enabling capabilities across the Defence'
     ],
-    correct: 'Army',
-    explain: 'The Army is one of the three military services covered in the course.',
-    image: '/military.png'
+    correct: 'Staretgic planning, operational coordination and administrative support',
+    explain: 'The Defence Staff plays a crucial role in the Danish Armed Forces by providing strategic coordination, capability development, and administrative oversight of military operations.',
+    image: '/Defence-staff.png'
   },
 
   {
-    q: 'What is the purpose of military organization and structure?',
+    q: "Which of the following is not part of the Navy's officer rank structure?",
     opts: [
-      'To define roles, responsibilities and how units work together',
-      'To replace all individual responsibilities',
-      'To eliminate the need for leadership',
-      'To make all military units identical'
+      'Admiral',
+      'Commander',
+      'Lieutenant',
+      'General'
     ],
-    correct: 'To define roles, responsibilities and how units work together',
-    explain: 'Military organization establishes roles, responsibilities and relationships between units and personnel.',
-    image: '/military.png'
+    correct: 'General',
+    explain: "A General is an Army rank and is not part of the Navy's officer rank structure. A General is the highest-ranking officer in the Army rank structure.",
+    image: '/officer-rank.png'
   }
 
 ];
