@@ -1511,6 +1511,8 @@ function submitMilitaryQuiz() {
   ).length;
 
   go('militaryComplete');
+  
+  setTimeout(confetti, 100);
 
 }
 
