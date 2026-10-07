@@ -1567,17 +1567,17 @@ function militaryQuiz() {
 
             ${q.opts.map(a => `
 
-              <button
-                class="answer ${
-                  state.militaryAnswers[i] === a
-                    ? 'selected'
-                    : ''
-                }"
-                onclick='chooseMilitary(${i}, ${JSON.stringify(a)})'
+             <button
+  class="answer ${
+    state.militaryAnswers[i] === a
+      ? 'selected'
+      : ''
+  }"
+  onclick='chooseMilitary(${i}, ${JSON.stringify(a)})'
+>
+  ${a}
+</button>
 
-                ${a}
-
-              </button>
 
             `).join('')}
 
