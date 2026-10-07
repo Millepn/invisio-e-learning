@@ -1166,7 +1166,7 @@ function militaryReader() {
 
         <button
           class="btn btn-light"
-          onclick="go('militaryOverview')">
+          onclick="startMilitaryQuiz()">
 
           Back to course overview
 
@@ -1503,6 +1503,14 @@ function chooseMilitary(q, a) {
 
 }
 
+function startMilitaryQuiz() {
+
+  state.militaryAnswers = {};
+  state.militaryScore = 0;
+
+  go('militaryQuiz');
+
+}
 
 function submitMilitaryQuiz() {
 
