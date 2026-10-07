@@ -17,8 +17,7 @@ const courses = [
     items: [
       'How the Danish defence is organized',
       'Introduction to the three services',
-      'Introduction to military ranks',
-      'How the army is organized'
+      'The structure of the army'
     ]
   },
 
@@ -902,22 +901,17 @@ function militaryOverview() {
 
   {
     title: 'How the Danish defence is organized',
-    image: '/military.png'
+    image: '/how-the-danish-defence-is-organized.png'
   },
 
   {
     title: 'Introduction to the three services',
-    image: '/military.png'
+    image: '/The-three-services.png'
   },
 
   {
-    title: 'Introduction to military ranks',
-    image: '/military.png'
-  },
-
-  {
-    title: 'How the army is organized',
-    image: '/military.png'
+    title: 'The structure of the army',
+    image: '/structure of the army.png'
   }
 
 ];
