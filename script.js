@@ -1470,7 +1470,7 @@ const militaryQuestions = [
     q: 'What does the Defence Staff provide?',
     opts: [
       'Strategic planning, operational coordination and administrative support',
-      'The development and employment of Danmark's land forces',
+      "The development and employment of Danmark's land forces",
       'Denmarks maritime capabilities and naval operations',
       'Essential support and enabling capabilities across the Defence'
     ],
