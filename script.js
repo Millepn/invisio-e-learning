@@ -3,8 +3,11 @@ const app = document.querySelector('#app');
 let state = {
   screen: 'login',
   answers: {},
-  score: 0
+  score: 0,
+  militaryAnswers: {},
+  militaryScore: 0
 };
+
 
 const courses = [
   {
@@ -1174,12 +1177,13 @@ function militaryReader() {
 
 
         <button
-          class="btn btn-primary"
-          onclick="go('quiz')">
+  class="btn btn-primary"
+  onclick="go('militaryQuiz')">
 
-          Continue to quiz
+  Continue to quiz
 
-        </button>
+</button>
+
 
 
       </div>
@@ -1192,7 +1196,7 @@ function militaryReader() {
 }
 
 /* =========================================================
-   QUIZ
+   NATO QUIZ
    ========================================================= */
 
 const questions = [
@@ -1227,7 +1231,7 @@ const questions = [
 
 
 /* =========================================================
-   QUIZ ANSWER
+   NATO QUIZ ANSWER
    ========================================================= */
 
 function choose(q, a) {
@@ -1240,7 +1244,7 @@ function choose(q, a) {
 
 
 /* =========================================================
-   SUBMIT QUIZ
+   NATO SUBMIT QUIZ
    ========================================================= */
 
 function submitQuiz() {
@@ -1257,7 +1261,7 @@ function submitQuiz() {
 
 
 /* =========================================================
-   QUIZ PAGE
+   NATO QUIZ PAGE
    ========================================================= */
 
 function quiz() {
@@ -1392,7 +1396,7 @@ function quiz() {
 
 
 /* =========================================================
-   COMPLETION PAGE
+   NATO COMPLETION PAGE
    ========================================================= */
 
 function complete() {
@@ -1461,6 +1465,232 @@ function complete() {
 
 
 /* =========================================================
+   MILITARY QUIZ
+   ========================================================= */
+
+const militaryQuestions = [
+
+  {
+    q: 'Which of the following is one of the three military services?',
+    opts: [
+      'Army',
+      'Police',
+      'Fire service',
+      'Customs service'
+    ],
+    correct: 'Army',
+    explain: 'The Army is one of the three military services covered in the course.',
+    image: '/military.png'
+  },
+
+  {
+    q: 'What is the purpose of military organization and structure?',
+    opts: [
+      'To define roles, responsibilities and how units work together',
+      'To replace all individual responsibilities',
+      'To eliminate the need for leadership',
+      'To make all military units identical'
+    ],
+    correct: 'To define roles, responsibilities and how units work together',
+    explain: 'Military organization establishes roles, responsibilities and relationships between units and personnel.',
+    image: '/military.png'
+  }
+
+];
+
+
+function chooseMilitary(q, a) {
+
+  state.militaryAnswers[q] = a;
+
+  render();
+
+}
+
+
+function submitMilitaryQuiz() {
+
+  state.militaryScore = militaryQuestions.filter(
+    (q, i) => state.militaryAnswers[i] === q.correct
+  ).length;
+
+  go('militaryComplete');
+
+}
+
+function militaryQuiz() {
+
+  return `
+    ${header()}
+
+    <section class="hero">
+
+      <div class="hero-copy">
+
+        <div class="eyebrow">
+          Knowledge check
+        </div>
+
+        <h1>
+          Military organization & structure
+        </h1>
+
+        <p>
+          Test your understanding of military organization,
+          services, roles and responsibilities.
+        </p>
+
+      </div>
+
+      <div class="hero-mark">
+
+        <img
+          src="/military.png"
+          alt="Military organization & structure">
+
+      </div>
+
+    </section>
+
+
+    <section class="section quiz">
+
+      ${militaryQuestions.map((q, i) => `
+
+        <article class="question">
+
+          <h3>
+            Question ${i + 1}
+          </h3>
+
+          <p>
+            ${q.q}
+          </p>
+
+          <div class="answers">
+
+            ${q.opts.map(a => `
+
+              <button
+                class="answer ${
+                  state.militaryAnswers[i] === a
+                    ? 'selected'
+                    : ''
+                }"
+                onclick="chooseMilitary(${i}, '${a}')">
+
+                ${a}
+
+              </button>
+
+            `).join('')}
+
+          </div>
+
+
+          ${
+            state.militaryAnswers[i]
+              ? state.militaryAnswers[i] === q.correct
+                ? `
+                  <div class="feedback-rich">
+
+                    <img
+                      src="${q.image}"
+                      alt="Military course">
+
+                    <h4>✅ Correct!</h4>
+
+                    <p>
+                      ${q.explain}
+                    </p>
+
+                  </div>
+                `
+                : `
+                  <div class="feedback">
+
+                    <b>❌ Try again</b>
+
+                    <br>
+
+                    Review the course and select another answer.
+
+                  </div>
+                `
+              : ''
+          }
+
+        </article>
+
+      `).join('')}
+
+
+      <button
+        class="btn btn-primary"
+        ${
+          Object.keys(state.militaryAnswers).length < militaryQuestions.length
+            ? 'disabled'
+            : ''
+        }
+        onclick="submitMilitaryQuiz()">
+
+        Finish course
+
+      </button>
+
+    </section>
+
+    ${footer()}
+  `;
+}
+
+function militaryComplete() {
+
+  return `
+    ${header()}
+
+    <section class="section">
+
+      <div class="complete">
+
+        <div class="eyebrow">
+          Course completed
+        </div>
+
+        <h1>
+          Congratulations!
+        </h1>
+
+        <p>
+          You have completed the course
+          “Military organization & structure”.
+        </p>
+
+        <div class="score">
+          ${state.militaryScore}/${militaryQuestions.length}
+        </div>
+
+        <p>
+          Your military organization course is now complete.
+        </p>
+
+        <button
+          class="btn btn-primary"
+          onclick="go('courses')">
+
+          Explore more courses
+
+        </button>
+
+      </div>
+
+    </section>
+
+    ${footer()}
+  `;
+}
+
+/* =========================================================
    RENDER
    ========================================================= */
 
@@ -1476,6 +1706,8 @@ function render() {
 
   militaryOverview: militaryOverview,
   militaryReader: militaryReader,
+  militaryQuiz: militaryQuiz,
+  militaryComplete: militaryComplete,
 
   quiz: quiz,
   complete: complete
