@@ -12,6 +12,8 @@ const courses = [
     image: '/military.png',
     pages: 12,
     quizzes: 1,
+    available: true, 
+    screen: 'militaryOverview',
     items: [
       'How the Danish defence is organized',
       'Introduction to the three services',
@@ -26,6 +28,7 @@ const courses = [
     pages: 8,
     quizzes: 2,
     available: true, 
+    screen: 'overview',
     items: [
       'A brief history of NATO',
       'The North Atlantic Treaty',
@@ -706,7 +709,7 @@ function courseCard(c, i) {
         class="btn ${c.available ? 'btn-open-course' : 'btn-light'}"
         onclick="${
           c.available
-            ? "go('overview')"
+            ? `go('${c.screen}')`
             : "alert('This course is not included in the prototype yet.')"
         }">
 
@@ -890,7 +893,139 @@ function overview() {
 
 
 /* =========================================================
-   PDF READER
+   Military COURSE OVERVIEW
+   ========================================================= */
+
+function militaryOverview() {
+
+  const mods = [
+
+  {
+    title: 'How the Danish defence is organized',
+    image: '/military.png'
+  },
+
+  {
+    title: 'Introduction to the three services',
+    image: '/military.png'
+  },
+
+  {
+    title: 'Introduction to military ranks',
+    image: '/military.png'
+  },
+
+  {
+    title: 'How the army is organized',
+    image: '/military.png'
+  }
+
+];
+
+
+
+  return `
+    ${header()}
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="hero-copy">
+
+        <div class="eyebrow">
+          Course overview
+        </div>
+
+        <h1>
+  Military organization & structure
+</h1>
+
+
+        <p>
+  Gain a deeper understanding of how military organizations
+  are structured, how the different services work together,
+  and how military roles and responsibilities are organized.
+</p>
+
+
+        <button
+          class="btn btn-light"
+          onclick="go('militaryReader')">
+
+
+          Start course
+
+        </button>
+
+      </div>
+
+
+      <div class="hero-mark">
+
+        <img
+  src="/military.png"
+  alt="Military organization & structure">
+
+
+      </div>
+
+    </section>
+
+
+    <!-- COURSE MODULES -->
+
+    <section class="section">
+
+      <h2>
+        Overview of the course
+      </h2>
+
+      <p class="lead">
+  Military organization & structure
+</p>
+
+
+
+      <div class="modules">
+
+        ${mods.map((m, i) => `
+
+          <article class="module">
+
+            <b>
+              ${i + 1}
+            </b>
+
+            <h3>
+              ${m.title}
+            </h3>
+
+
+            <div class="thumb">
+
+              <img
+                src="${m.image}"
+                alt="${m.title}">
+
+            </div>
+
+          </article>
+
+        `).join('')}
+
+      </div>
+
+    </section>
+
+
+    ${footer()}
+  `;
+}
+
+/* =========================================================
+   NATO PDF READER
    ========================================================= */
 
 function reader() {
@@ -975,6 +1110,92 @@ function reader() {
   `;
 }
 
+/* =========================================================
+   Military PDF READER
+   ========================================================= */
+function militaryReader() {
+
+  return `
+    ${header()}
+
+
+    <section class="section course-reader-section">
+
+
+      <div class="pdf-reader-header">
+
+        <div>
+
+          <div class="eyebrow">
+            Course material
+          </div>
+
+         <h1>
+  Military organization & structure
+</h1>
+
+
+          <p>
+            Read the course material below. You can scroll
+            through the document, zoom in, or open it in
+            a separate browser tab.
+          </p>
+
+        </div>
+
+
+        <a
+          href="/introduction-to-military-reduced.pdf"
+          target="_blank">
+
+          Open PDF in new tab
+
+        </a>
+
+      </div>
+
+
+      <div class="pdf-viewer-container">
+
+        <iframe
+          class="pdf-viewer"
+          src="/introduction-to-military-reduced.pdf#page=1&zoom=page-width"
+          title="Military organization & structure course material"
+        </iframe>
+
+      </div>
+
+
+      <div class="reader-navigation">
+
+
+        <button
+          class="btn btn-light"
+          onclick="go('militaryOverview')">
+
+
+          Back to course overview
+
+        </button>
+
+
+        <button
+          class="btn btn-primary"
+          onclick="go('quiz')">
+
+          Continue to quiz
+
+        </button>
+
+
+      </div>
+
+    </section>
+
+
+    ${footer()}
+  `;
+}
 
 /* =========================================================
    QUIZ
@@ -1125,8 +1346,9 @@ function quiz() {
         <div class="feedback-rich">
 
           <img
-            src="${q.image}"
-      ck-text">
+  src="${q.image}"
+  alt="Quiz image">
+
 
             <h4>✅ Correct!</h4>
 
@@ -1135,8 +1357,6 @@ function quiz() {
             </p>
 
           </div>
-
-        </div>
       `
       : `
         <div class="feedback">
@@ -1252,15 +1472,21 @@ function complete() {
 
 function render() {
   const pages = {
-    login: login,
-    home: home,
-    mypage: myPage,
-    courses: coursesPage,
-    overview: overview,
-    reader: reader,
-    quiz: quiz,
-    complete: complete
-  };
+  login: login,
+  home: home,
+  mypage: myPage,
+  courses: coursesPage,
+
+  overview: overview,
+  reader: reader,
+
+  militaryOverview: militaryOverview,
+  militaryReader: militaryReader,
+
+  quiz: quiz,
+  complete: complete
+};
+
 
   const currentPage = pages[state.screen] || login;
 
